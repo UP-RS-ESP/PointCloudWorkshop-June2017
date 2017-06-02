@@ -15,6 +15,6 @@ The course will take place at the University of Potsdam on <a href="https://www.
 This document has essential information for the course including the agenda: <a href="https://github.com/UP-RS-ESP/PointCloudWorkshop-June2017/blob/master/June7_lidar_workshop.pdf">June7_lidar_workshop.pdf</a>.
 
 ## Links
-### Structure from Motion short course documents and tutorials from UNAVCO: <a href="http://kb.unavco.org/kb/article/2016-gsa-introduction-to-structure-from-motion-sfm-photogrammetry-for-earth-science-research-and-education-short-course-859.html">GSA SfM short course</a>
-test
+--Structure from Motion short course documents and tutorials from UNAVCO: <a href="http://kb.unavco.org/kb/article/2016-gsa-introduction-to-structure-from-motion-sfm-photogrammetry-for-earth-science-research-and-education-short-course-859.html">GSA SfM short course</a>
+
 
