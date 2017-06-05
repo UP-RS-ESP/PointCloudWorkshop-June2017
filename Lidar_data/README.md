@@ -4,9 +4,13 @@
 These points have been colored with a 20-cm digital orthophoto from the same time. Point classification was performed using standard parameters from lasground and lasclassify
 + Point-classified LAZ file of Golm airborne lidar tile (includes Campus Golm and surrounding area) [golm_airlidar_utm33u_wgs84_rgb_cl.laz](https://www.dropbox.com/s/hiy02tx4qpq40jv/golm_airlidar_utm33u_wgs84_rgb_cl.laz?dl=0)
 
++ Point-classified LAZ file clipped to campus Golm [golm_airlidar_utm33u_wgs84_rgb_cl_campus.laz](https://www.dropbox.com/s/hu8f0em87ea0778/golm_airlidar_utm33u_wgs84_rgb_cl_campus.laz?dl=0), corresponding Matlab MAT file: [golm_airlidar_utm33u_wgs84_rgb_cl_campus.mat](https://www.dropbox.com/s/i4kplyif1915gtn/golm_airlidar_utm33u_wgs84_rgb_cl_campus.mat?dl=0) _Use this file for ICP alignment_
+
+---
 + Bare-earth DEM (Digital Terrain Model) with 1-m spatial resolution [GeoTIFF](https://www.dropbox.com/s/kweuhu9cldc2bao/golm_airlidar_utm33u_wgs84_cl2.tif?dl=0)
 and the corresponding hillshade [GeoTIFF](https://www.dropbox.com/s/qyfj3tcw3rv3whn/golm_airlidar_utm33u_wgs84_cl2_HS.tif?dl=0)
 
+---
 + Digital Orthophotos (20-cm, DOP20RGB) for Campus Golm (same area as airborne lidar data): [Golm_DOP_20cm_utm33_wgs84_tif.zip](https://www.dropbox.com/s/xofz56eqh4vrv65/Golm_DOP_20cm_utm33_wgs84_tif.zip?dl=0)
 
 ### Terrestrial Lidar Scanner data (February and March 2017)
@@ -20,25 +24,28 @@ In March 2017, about 170 individual terrestrial lidar scans (TLS) were merged to
 ## 2. SfM datasets
 ### 1. ebee (March 25, 2017)
 ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photoscan and Pix4D. Pointclouds derived from OpenDroneMapper were not of high quality.
-+ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz](https://www.dropbox.com/s/arm8g781gdqsy2a/ebee_Golm_Color_25March2017_agisoft_5cm.laz?dl=0).
++ Point cloud derived from Agisoft Photoscan (high quality densification) using using out-of-camera JPG images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz](https://www.dropbox.com/s/arm8g781gdqsy2a/ebee_Golm_Color_25March2017_agisoft_5cm.laz?dl=0), same point cloud thinned to 25-cm as Matlab MAT file [ebee_Golm_Color_25March2017_agisoft_25cm](https://www.dropbox.com/s/yib39l9nkzv0kpu/ebee_Golm_Color_25March2017_agisoft_25cm.mat?dl=0). _Use the 25 cm version for ICP alignment_
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25March2017_agisoft_5cm.laz -olaz -o ebee_Golm_Color_25March2017_agisoft_25cm.laz -central -step 0.25```
+  + Pointcloud aligned to airborne lidar dataset using ICP (see Matlab code): [ebee_Golm_Color_25March2017_agisoft_25cm_POSTICP.laz](https://www.dropbox.com/s/469f10vsp98b2a4/ebee_Golm_Color_25March2017_agisoft_25cm.laz?dl=0), corresponding Matlab MAT file: [ebee_Golm_Color_25March2017_agisoft_25cm_POSTICP.mat](https://www.dropbox.com/s/yno6iay2e8c37fx/ebee_Golm_Color_25March2017_agisoft_25cm_POSTICP.mat?dl=0) _We will generate these files during the workshop_
 
++ Pointcloud derived from Pix4D (minimum 4 image matches) using JPG converted from camera RAW images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_raw_5cm.laz](XXX), thinned to 25 cm: [ebee_Golm_Color_25March2017_raw_25cm.laz](https://www.dropbox.com/s/2vtdqdai95e52vc/ebee_Golm_Color_25March2017_raw_25cm.laz?dl=0) _Use the 25 cm version for ICP alignment_
 
-+ ebee_Golm_Color_25March2017.laz
-ebee_Golm_Color_25March2017_raw_aligned_to_airborne.laz
-
-+ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz]( ).
-  Generated with ```lasthin.exe -i ebee_Golm_Color_25March2017_agisoft.laz -olaz -o ebee_Golm_Color_25March2017_agisoft_5cm.laz -central -step 0.05```
-+ Orthophoto (resampled to 5cm) generated with Photoscan Agisoft (5cm spatial resolution): [2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif](https://www.dropbox.com/s/6g96awjwwbf1ab7/2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif?dl=0)
+---
++ Orthophoto (resampled to 5cm) generated with Pix4D (resampled to 5 cm spatial resolution): [2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif](https://www.dropbox.com/s/6g96awjwwbf1ab7/2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif?dl=0)
 
 
 ### 2. ebee (May 25, 2017)
-ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photoscan and Pix4D. Pointclouds derived from OpenDroneMapper were not of high quality.
-+ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz](https://www.dropbox.com/s/c14o6micli2hygk/ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz?dl=0).
-  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_raw.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz -central -step 0.05```
-+ Pointcloud derived from Agisoft Photoscan using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz](https://www.dropbox.com/s/ac8cziwavd81l3k/ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz?dl=0).
-  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_ooc.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz -central -step 0.05```
-+ Pointcloud derived from Pix4D (minimum 4 image matches) using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz](https://www.dropbox.com/s/wqbpazlwfuo70y3/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz?dl=0).
+ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photoscan and Pix4D. Pointclouds derived with OpenDroneMapper were not of high quality.
++ Pointcloud derived from Pix4D (minimum 4 image matches) using out-of-camera (ooc) JPG images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz](https://www.dropbox.com/s/wqbpazlwfuo70y3/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz?dl=0).
   Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_pix4d_4matches_ooc.laz -olaz -o ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz -central -step 0.05```
++ Pointcloud derived from Pix4D (minimum 4 image matches) using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 25 cm: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_25cm.laz](https://www.dropbox.com/s/5sclxxj5fq8ymgp/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_25cm.laz?dl=0), corresponding Matlab MAT file: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_25cm.mat](https://www.dropbox.com/s/cs8ezcnw02zay8r/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_25cm.mat?dl=0) _Use the 25 cm version for ICP alignment_
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_pix4d_4matches_ooc.laz -olaz -o ebee_Golm_Color_25May2017_pix4d_4matches_ooc_25cm.laz -central -step 0.25```
+  
++ Point cloud derived from Agisoft Photoscan (high quality densification) using JPG converted from camera RAW images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz](https://www.dropbox.com/s/c14o6micli2hygk/ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz?dl=0).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_raw.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz -central -step 0.05```
++ Pointcloud derived from Agisoft Photoscan (high quality densification) using out-of-camera (ooc) JPG images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz](https://www.dropbox.com/s/ac8cziwavd81l3k/ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz?dl=0).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_ooc.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz -central -step 0.05```
+  
 + Orthophoto (resampled to 5cm) generated with Photoscan Agisoft (5cm spatial resolution): [ebee_Golm_Color_25May2017_agisoft_orthophoto_5cm.tif](https://www.dropbox.com/s/rat920pde63x214/ebee_Golm_Color_25May2017_agisoft_orthophoto_5cm.tif?dl=0)
 
 
