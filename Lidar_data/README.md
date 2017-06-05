@@ -12,8 +12,10 @@ and the corresponding hillshade [GeoTIFF](https://www.dropbox.com/s/qyfj3tcw3rv3
 ### Terrestrial Lidar Scanner data (February and March 2017)
 In March 2017, about 170 individual terrestrial lidar scans (TLS) were merged to generate a nearly complete TLS coverage of Campus Golm. The data are very detailed for the ground and sidewalls of building, but do not contain roofs (with the exception of building 27). The data are rudimentary aligned to the airborne lidar datasets.
 
-+ TLS scan from March 2017, 5-cm thinned version: [TLS_Golm_March2017_5cm.laz](https://www.dropbox.com/s/fuwhnz5a66a31i5/TLS_Golm_March2017_5cm.laz?dl=0). This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.05```
-+TLS scan from March 2017, 10-cm thinned version: [TLS_Golm_March2017_10cm.laz](https://www.dropbox.com/s/6wd1a9o0k3j8m48/TLS_Golm_March2017_10cm.laz?dl=0). This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.5```
++ TLS scan from March 2017, 5-cm thinned version: [TLS_Golm_March2017_5cm.laz](https://www.dropbox.com/s/fuwhnz5a66a31i5/TLS_Golm_March2017_5cm.laz?dl=0).
+  This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.05```
++ TLS scan from March 2017, 10-cm thinned version: [TLS_Golm_March2017_10cm.laz](https://www.dropbox.com/s/6wd1a9o0k3j8m48/TLS_Golm_March2017_10cm.laz?dl=0).
+  This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.5```
 
 ## 2. SfM datasets
 ### 1. ebee (March 25, 2017)
@@ -21,18 +23,22 @@ ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photo
 + Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz](https://www.dropbox.com/s/arm8g781gdqsy2a/ebee_Golm_Color_25March2017_agisoft_5cm.laz?dl=0).
 
 
-ebee_Golm_Color_25March2017.laz
++ ebee_Golm_Color_25March2017.laz
 ebee_Golm_Color_25March2017_raw_aligned_to_airborne.laz
 
-+ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz]( ). Generated with ```lasthin.exe -i ebee_Golm_Color_25March2017_agisoft.laz -olaz -o ebee_Golm_Color_25March2017_agisoft_5cm.laz -central -step 0.05```
++ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_agisoft_5cm.laz]( ).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25March2017_agisoft.laz -olaz -o ebee_Golm_Color_25March2017_agisoft_5cm.laz -central -step 0.05```
 + Orthophoto (resampled to 5cm) generated with Photoscan Agisoft (5cm spatial resolution): [2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif](https://www.dropbox.com/s/6g96awjwwbf1ab7/2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif?dl=0)
 
 
 ### 2. ebee (May 25, 2017)
 ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photoscan and Pix4D. Pointclouds derived from OpenDroneMapper were not of high quality.
-+ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz](https://www.dropbox.com/s/c14o6micli2hygk/ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz?dl=0). Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_raw.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz -central -step 0.05```
-+ Pointcloud derived from Agisoft Photoscan using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz](https://www.dropbox.com/s/ac8cziwavd81l3k/ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz?dl=0). Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_ooc.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz -central -step 0.05```
-+ Pointcloud derived from Pix4D (minimum 4 image matches) using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz](https://www.dropbox.com/s/wqbpazlwfuo70y3/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz?dl=0). Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_pix4d_4matches_ooc.laz -olaz -o ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz -central -step 0.05```
++ Pointcloud derived from Agisoft Photoscan using the JPG raw images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz](https://www.dropbox.com/s/c14o6micli2hygk/ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz?dl=0).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_raw.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_raw_5cm.laz -central -step 0.05```
++ Pointcloud derived from Agisoft Photoscan using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz](https://www.dropbox.com/s/ac8cziwavd81l3k/ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz?dl=0).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_agisoft_ooc.laz -olaz -o ebee_Golm_Color_25May2017_agisoft_ooc_5cm.laz -central -step 0.05```
++ Pointcloud derived from Pix4D (minimum 4 image matches) using out-of-camera (ooc) images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz](https://www.dropbox.com/s/wqbpazlwfuo70y3/ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz?dl=0).
+  Generated with ```lasthin.exe -i ebee_Golm_Color_25May2017_pix4d_4matches_ooc.laz -olaz -o ebee_Golm_Color_25May2017_pix4d_4matches_ooc_5cm.laz -central -step 0.05```
 + Orthophoto (resampled to 5cm) generated with Photoscan Agisoft (5cm spatial resolution): [ebee_Golm_Color_25May2017_agisoft_orthophoto_5cm.tif](https://www.dropbox.com/s/rat920pde63x214/ebee_Golm_Color_25May2017_agisoft_orthophoto_5cm.tif?dl=0)
 
 
