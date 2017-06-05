@@ -6,4 +6,4 @@ The point cloud tools are a useful alternative to the Computer Vision Toolbox fr
 
 + File [Golm_campus_Lidar_SfM_ICP.m](Golm_campus_Lidar_SfM_ICP.m) contains an example of how to align airborne lidar and SfM point clouds using ICP.
 + File [DJI_ZenMuseX5_Haus27_29_ICP.m](DJI_ZenMuseX5_Haus27_29_ICP.m) is an example file that shows the alignment of 6 point clouds (one reference point cloud: ebee-May-25-2017 with 5 point clouds derived with the DJI ZenMuse X5 at various heights)
-+ File [
++ File [Golm_pointcloud_kdtree.m](Golm_pointcloud_kdtree.m) is an example that shows how to use kdtree on point clouds. This script contains a micro-relief (or topographic variance) calculation for the airborne lidar and ebee datasets
