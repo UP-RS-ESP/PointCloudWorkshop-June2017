@@ -18,3 +18,8 @@ This document has essential information for the course including the agenda: <a 
 --Structure from Motion short course documents and tutorials from UNAVCO: <a href="http://kb.unavco.org/kb/article/2016-gsa-introduction-to-structure-from-motion-sfm-photogrammetry-for-earth-science-research-and-education-short-course-859.html">GSA SfM short course</a>
 
 
+## Point-cloud data
+We provide Dropbox links in directry [Lidar_data](Lidar_data). Some of these files are large.
+
+## Matlab codes
+Example Matlab codes are available in [Matlab_codes](Matlab_codes) and will be updated. Additional codes will be uploaded upon requests.
