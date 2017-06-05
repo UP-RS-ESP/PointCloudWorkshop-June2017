@@ -56,3 +56,8 @@ ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photo
 ---
 + Pointcloud derived from DJI ZenMuse X5 (Inspire 2) with _flight elevation 70m_, OpenDrone Mapper (ODM) pointcloud, 4 minimum image matches (optimized parameters 3,  cf. settings_optimzed3.yaml), rescaled to 1cm. *These data are only rudimentary aligned to the airborne dataset and will need to be manually aligned to the airborne datasets before ICP registration* [ODM_Haus27_29_H70m_model_optimized3param.laz](https://www.dropbox.com/s/uyl9tnq6uidz8k9/ODM_Haus27_29_H70m_model_optimized3param.laz?dl=0).
 + Pointcloud derived from DJI ZenMuse X5 (Inspire 2) by merging images with _flight elevations of 30, 50, 70, and 90m_ with a total of 1327 images, OpenDrone Mapper (ODM) pointcloud, 4 minimum image matches (optimized parameters 5,  cf. settings_optimzed5.yaml), 4 minimum image matches, rescaled to 1cm. *These data are notaligned to the airborne dataset and will need to be manually aligned to the airborne datasets before ICP registration* [Golm_250517_Haus27_29_H30_50_70_90m_Pix4D_densified_ptcloud.laz]().
+
+## 2. Configuration files
+### OpenDrone Mapper
+There are two configuration files that have been used with OpenDrone Mapper to generate pointclouds.
++ File [settings_optimized3.yaml](settings_optimized3.yaml) and [settings_optimized5.yaml](settings_optimized5.yaml)
