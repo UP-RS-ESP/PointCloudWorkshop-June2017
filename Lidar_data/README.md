@@ -6,11 +6,9 @@ These points have been colored with a 20-cm digital orthophoto from the same tim
 
 + Point-classified LAZ file clipped to campus Golm [golm_airlidar_utm33u_wgs84_rgb_cl_campus.laz](https://www.dropbox.com/s/hu8f0em87ea0778/golm_airlidar_utm33u_wgs84_rgb_cl_campus.laz?dl=0), corresponding Matlab MAT file: [golm_airlidar_utm33u_wgs84_rgb_cl_campus.mat](https://www.dropbox.com/s/i4kplyif1915gtn/golm_airlidar_utm33u_wgs84_rgb_cl_campus.mat?dl=0) _Use this file for ICP alignment_
 
----
 + Bare-earth DEM (Digital Terrain Model) with 1-m spatial resolution [GeoTIFF](https://www.dropbox.com/s/kweuhu9cldc2bao/golm_airlidar_utm33u_wgs84_cl2.tif?dl=0)
 and the corresponding hillshade [GeoTIFF](https://www.dropbox.com/s/qyfj3tcw3rv3whn/golm_airlidar_utm33u_wgs84_cl2_HS.tif?dl=0)
 
----
 + Digital Orthophotos (20-cm, DOP20RGB) for Campus Golm (same area as airborne lidar data): [Golm_DOP_20cm_utm33_wgs84_tif.zip](https://www.dropbox.com/s/xofz56eqh4vrv65/Golm_DOP_20cm_utm33_wgs84_tif.zip?dl=0)
 
 ### Terrestrial Lidar Scanner data (February and March 2017)
@@ -30,9 +28,8 @@ ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photo
 
 + Pointcloud derived from Pix4D (minimum 4 image matches) using JPG converted from camera RAW images, point cloud rescaled to 0.01 m (1cm precision), and thinned to 5 cm: [ebee_Golm_Color_25March2017_raw_5cm.laz](XXX), thinned to 25 cm: [ebee_Golm_Color_25March2017_raw_25cm.laz](https://www.dropbox.com/s/2vtdqdai95e52vc/ebee_Golm_Color_25March2017_raw_25cm.laz?dl=0) _Use the 25 cm version for ICP alignment_
 
----
-+ Orthophoto (resampled to 5cm) generated with Pix4D (resampled to 5 cm spatial resolution): [2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif](https://www.dropbox.com/s/6g96awjwwbf1ab7/2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif?dl=0)
 
++ Orthophoto (resampled to 5cm) generated with Pix4D (resampled to 5 cm spatial resolution): [2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif](https://www.dropbox.com/s/6g96awjwwbf1ab7/2017_03_25_ebee_campus_UTM33N_WGS84_5cm.tif?dl=0)
 
 ### 2. ebee (May 25, 2017)
 ebee flight with PowerShot 110S. SfM processing was performed with Agisoft Photoscan and Pix4D. Pointclouds derived with OpenDroneMapper were not of high quality.
