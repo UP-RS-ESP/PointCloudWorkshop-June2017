@@ -17,7 +17,7 @@ In March 2017, about 170 individual terrestrial lidar scans (TLS) were merged to
 + TLS scan from March 2017, 5-cm thinned version: [TLS_Golm_March2017_5cm.laz](https://www.dropbox.com/s/fuwhnz5a66a31i5/TLS_Golm_March2017_5cm.laz?dl=0).
   This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.05```
 + TLS scan from March 2017, 10-cm thinned version: [TLS_Golm_March2017_10cm.laz](https://www.dropbox.com/s/6wd1a9o0k3j8m48/TLS_Golm_March2017_10cm.laz?dl=0).
-  This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.5```
+  This was generated with: ```lasthin.exe -i TLS_Golm_March2017.laz -olaz -o TLS_Golm_March2017_5cm.laz -central -step 0.1```
 
 ## 2. SfM datasets
 ### 1. ebee (March 25, 2017)
