@@ -4,6 +4,30 @@ addpath(genpath('C:\Users\bodob\Dropbox\Teaching\DDA_SS17\labs\lab3-ICP\pglira-P
 %Mac OSX and Linux use:
 %addpath(genpath('/home/bodo/Dropbox/Teaching/DDA_SS17/labs/lab3-ICP/pglira-Point_cloud_tools_for_Matlab-0cad900'))
 
+%% Generate topographic roughness for Airborne lidar data
+golm_airlidar = pointCloud('golm_airlidar_utm33u_wgs84_rgb_cl_campus.laz');
+golm_airlidar_ns = createns(golm_airlidar.X);
+[golm_airlidar_idx_nn, golm_airlidar_dist_nn] = knnsearch(golm_airlidar_ns, golm_airlidar.X, 'K', 2);
+%topographic roughness for Airborne
+%find all points within radius of 3m
+[golm_airlidar_3m_idx, golm_airlidar_3m_dist] = rangesearch(golm_airlidar_ns,golm_airlidar.X, 3);
+%first column is always index to itself
+
+golm_airlidar_relief_3m = NaN(length(golm_airlidar_3m_idx), 5);
+%find range of elevation for each point (will take a few minutes, there are better ways to calculate this for loop):
+for i = 1:length(golm_airlidar_3m_idx)
+    golm_airlidar_relief_3m(i,:) = ...
+        [golm_airlidar.X(i,1) golm_airlidar.X(i,2) golm_airlidar.X(i,3) ...
+        max(golm_airlidar_ns.X(golm_airlidar_3m_idx{i},3)) - ...
+        min(golm_airlidar_ns.X(golm_airlidar_3m_idx{i},3)) ...
+        var(golm_airlidar_ns.X(golm_airlidar_3m_idx{i},3))];
+end
+golm_airlidar_rel3m = golm_airlidar;
+golm_airlidar_rel3m.A.user_data = golm_airlidar_relief_3m(:,4);
+golm_airlidar_rel3m.export('golm_airlidar_utm33u_wgs84_rgb_cl_campus_rel3m.laz')
+golm_airlidar_rel3m.A.user_data = golm_airlidar_relief_3m(:,5);
+golm_airlidar_rel3m.export('golm_airlidar_utm33u_wgs84_rgb_cl_campus_var.laz')
+
 %% Load ebee points and display
 %you can load LAS data either with lasdata (https://www.mathworks.com/matlabcentral/fileexchange/48073-lasdata) or using the Point Cloud Tool (http://www.geo.tuwien.ac.at/downloads/pg/pctools/pctools.html)
 %LAZ data can be read with the Point Cloud Tool 
@@ -181,19 +205,4 @@ end
 axis image, view(3)
 grid on
 title('Octree view of ebee 25-March-2017 pointcloud with n=20 bins', 'Fontsize', 16)
-xlabel('UTM-X'), ylabel('UTM-Y'), zlabel('UTM-Z')
-
-%% Optional: Octrees Airborne Lidar
-airlidar_OT = OcTree(golm_airlidar.X,'binCapacity',20);        
-figure(4), clf
-boxH = airlidar_OT.plot;
-cols = lines(airlidar_OT.BinCount);
-doplot3 = @(p,varargin)plot3(p(:,1),p(:,2),p(:,3),varargin{:});
-for i = 1:airlidar_OT.BinCount
-    set(boxH(i),'Color',cols(i,:),'LineWidth', 1+airlidar_OT.BinDepths(i))
-	doplot3(golm_airlidar.X(airlidar_OT.PointBins==i,:),'.','Color',cols(i,:))
-end
-axis image, view(3)
-grid on
-title('Octree view of airborne pointcloud with n=20 bins', 'Fontsize', 16)
 xlabel('UTM-X'), ylabel('UTM-Y'), zlabel('UTM-Z')
