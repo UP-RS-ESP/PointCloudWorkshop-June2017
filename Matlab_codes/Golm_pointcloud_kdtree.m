@@ -34,22 +34,22 @@ golm_ebee25Mar17 = pointCloud('ebee_Golm_Color_25March2017_agisoft_25cm.mat');
 golm_ebee25Mar17_ns = createns(golm_ebee25Mar17.X);
 %topographic roughness for ebee-25-Mar-17
 %find all points within radius of 3m
-[golm_ebee25Mar17_3m_idx, golm_ebee25Mar17_3m_dist] = rangesearch(golm_ebee25Mar17_ns,golm_ebee25Mar17.X, 3);
-golm_ebee25Mar17_relief_3m = NaN(length(golm_ebee25Mar17_3m_idx), 5);
+[golm_ebee25Mar17_1m_idx, golm_ebee25Mar17_1m_dist] = rangesearch(golm_ebee25Mar17_ns,golm_ebee25Mar17.X, 1);
+golm_ebee25Mar17_relief_1m = NaN(length(golm_ebee25Mar17_1m_idx), 5);
 %find range of elevation for each point (will take a few minutes, there are better ways to calculate this for loop):
-for i = 1:length(golm_ebee25Mar17_3m_idx)
-    golm_ebee25Mar17_relief_3m(i,:) = ...
+for i = 1:length(golm_ebee25Mar17_1m_idx)
+    golm_ebee25Mar17_relief_1m(i,:) = ...
         [golm_ebee25Mar17.X(i,1) golm_ebee25Mar17.X(i,2) golm_ebee25Mar17.X(i,3) ...
-        max(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_3m_idx{i},3)) - ...
-        min(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_3m_idx{i},3)) ...
-        var(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_3m_idx{i},3))];
+        max(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_1m_idx{i},3)) - ...
+        min(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_1m_idx{i},3)) ...
+        var(golm_ebee25Mar17_ns.X(golm_ebee25Mar17_1m_idx{i},3))];
 end
 %save to LAZ file:
-golm_airlidar_rel3m = golm_ebee25Mar17;
-golm_airlidar_rel3m.A.user_data = golm_ebee25Mar17_relief_3m(:,4);
-golm_airlidar_rel3m.export('golm_airlidar_utm33u_wgs84_rgb_cl_campus_rel3m.laz')
-golm_airlidar_rel3m.A.user_data = golm_ebee25Mar17_relief_3m(:,5);
-golm_airlidar_rel3m.export('golm_airlidar_utm33u_wgs84_rgb_cl_campus_var.laz')
+golm_ebee25Mar17_rel3m = golm_ebee25Mar17;
+golm_ebee25Mar17_rel3m.A.user_data = golm_ebee25Mar17_relief_1m(:,4).*10;
+golm_ebee25Mar17_rel3m.export('ebee_Golm_Color_25March2017_agisoft_25cm_rel1m.laz')
+golm_ebee25Mar17_rel3m.A.user_data = golm_ebee25Mar17_relief_1m(:,5).*10;
+golm_ebee25Mar17_rel3m.export('ebee_Golm_Color_25March2017_agisoft_25cm_var1m.laz')
 
 %% Additional commands and furhter examples: load ebee points and display
 %you can load LAS data either with lasdata (https://www.mathworks.com/matlabcentral/fileexchange/48073-lasdata) or using the Point Cloud Tool (http://www.geo.tuwien.ac.at/downloads/pg/pctools/pctools.html)
